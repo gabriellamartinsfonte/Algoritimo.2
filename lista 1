@@ -1,0 +1,240 @@
+1
+#include <stdio.h>
+
+int main() {
+    float vec1[10], vec2[10];
+    for (int i = 0; i < 10; i++) {
+        scanf("%f", &vec1[i]);
+        vec2[i] = vec1[i] * vec1[i];
+    }
+    printf("Vector 1: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%f ", vec1[i]);
+    }
+    printf("\nVector 2: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%f ", vec2[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+
+
+2
+#include <stdio.h>
+
+int main() {
+    int vec[8], x, y, sum;
+    for (int i = 0; i < 8; i++) {
+        scanf("%d", &vec[i]);
+    }
+    scanf("%d %d", &x, &y);
+    if (x >= 0 && x < 8 && y >= 0 && y < 8) {
+        sum = vec[x] + vec[y];
+        printf("Sum: %d\n", sum);
+    } else {
+        printf("Invalid positions\n");
+    }
+    return 0;
+}
+
+
+
+3
+#include <stdio.h>
+
+int main() {
+    int vec[10], count = 0;
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &vec[i]);
+        if (vec[i] % 2 == 0) {
+            count++;
+        }
+    }
+    printf("Even values: %d\n", count);
+    return 0;
+}
+
+
+
+4
+#include <stdio.h>
+
+int main() {
+    int vec[10], max, pos;
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &vec[i]);
+    }
+    max = vec[0];
+    pos = 0;
+    for (int i = 1; i < 10; i++) {
+        if (vec[i] > max) {
+            max = vec[i];
+            pos = i;
+        }
+    }
+    printf("Vector: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", vec[i]);
+    }
+    printf("\nMax element: %d at position %d\n", max, pos);
+    return 0;
+}
+
+
+
+5
+#include <stdio.h>
+
+int main() {
+    int vec[6];
+    for (int i = 0; i < 6; i++) {
+        scanf("%d", &vec[i]);
+    }
+    printf("Vector in reverse order: ");
+    for (int i = 5; i >= 0; i--) {
+        printf("%d ", vec[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+
+6
+#include <stdio.h>
+
+int main() {
+    float grades[15], sum = 0;
+    for (int i = 0; i < 15; i++) {
+        scanf("%f", &grades[i]);
+        sum += grades[i];
+    }
+    printf("Average: %.2f\n", sum / 15.0);
+    return 0;
+}
+
+
+
+7
+#include <stdio.h>
+
+int main() {
+    float vec[10], sum_pos = 0, count_neg = 0;
+    for (int i = 0; i < 10; i++) {
+        scanf("%f", &vec[i]);
+        if (vec[i] < 0) {
+            count_neg++;
+        } else {
+            sum_pos += vec[i];
+        }
+    }
+    printf("Negative numbers: %d\n", count_neg);
+    printf("Sum of positive numbers: %.2f\n", sum_pos);
+    return 0;
+}
+
+8
+#include <stdio.h>
+
+int main() {
+    int vec[10], duplicates[10] = {0}, count = 0;
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &vec[i]);
+    }
+    for (int i = 0; i < 10; i++) {
+        for (int j = i + 1; j < 10; j++) {
+            if (vec[i] == vec[j] &&!duplicates[i]) {
+                duplicates[i] = 1;
+                count++;
+                printf("Duplicate value: %d\n", vec[i]);
+            }
+        }
+    }
+    return 0;
+}
+
+
+9
+#include <stdio.h>
+
+int main() {
+    int vec[10];
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &vec[i]);
+        if (vec[i] < 0) {
+            vec[i] = 0;
+        }
+    }
+    printf("Vector: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", vec[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+
+
+10 
+#include <stdio.h>
+
+int main() {
+    int mat[4][4], count = 0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            scanf("%d", &mat[i][j]);
+            if (mat[i][j] > 10) {
+                count++;
+            }
+        }
+    }
+    printf("Values greater than 10: %d\n", count);
+    return 0;
+}
+
+11
+#include <stdio.h>
+
+int main() {
+    int mat[5][5];
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (i == j) {
+                mat[i][j] = 1;
+            } else {
+                mat[i][j] = 0;
+            }
+        }
+    }
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d ", mat[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
+12
+
+#include <stdio.h>
+
+int main() {
+    int mat[4][4], max, row, col;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
+    max = mat[0][0];
+    row = col = 0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (mat[i][j] > max) {
+                max = mat[i][j
+
+
+
